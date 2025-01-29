@@ -1,0 +1,40 @@
+Simple Backup Script for a Git Repository 
+
+Create a file named git_backup.bat
+Add the following script:
+      @echo off
+:: Set the source Git repository folder
+set SOURCE_DIR=C:\path\to\your\repo
+
+:: Set the backup destination folder
+set BACKUP_DIR=C:\path\to\backup\Git_Backup_%date:~-4,4%-%date:~-10,2%-%date:~-7,2%
+
+:: Create backup folder
+mkdir "%BACKUP_DIR%"
+
+:: Copy the repository files
+xcopy /E /I /Y "%SOURCE_DIR%" "%BACKUP_DIR%"
+
+:: Log the backup
+echo Backup completed on %date% %time% >> "%BACKUP_DIR%\backup_log.txt"
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PowerShell Script:
+
+
+$source = "C:\path\to\your\repo"
+$backup = "C:\path\to\backup\Git_Backup_$(Get-Date -Format 'yyyy-MM-dd')"
+
+# Create backup directory if it doesn't exist
+if (!(Test-Path $backup)) {
+    New-Item -ItemType Directory -Path $backup
+}
+
+# Copy repository files
+Copy-Item -Path "$source\*" -Destination $backup -Recurse -Force
+
+# Log the backup
+"Backup completed on $(Get-Date)" | Out-File -Append -FilePath "$backup\backup_log.txt"
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Choose Start a program → Type:
+
+        powershell.exe -ExecutionPolicy Bypass -File "C:\path\to\git_backup.ps1"
