@@ -1,0 +1,28 @@
+Set Up Git Branching and Merge a New Feature
+
+Step 1: Navigate to Your Git Repository
+        cd /path/to/your/repo
+
+Step 2: Create a New Branch
+        git branch
+        git branch feature-test
+        git checkout feature-test
+        git checkout -b feature-test
+
+Step 3: Add a New Feature
+
+        echo "<h1>New Feature Page</h1>" > feature.html
+
+Step 4: Switch Back to the Main Branch
+
+        git checkout main  
+
+Step 5: Merge the Feature Branch
+
+        git merge feature-test
+
+        git add 
+        git commit -m "Resolved merge conflicts"
+
+
+
