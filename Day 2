@@ -1,0 +1,31 @@
+Set Up a Local Git Repository 
+Step 1: Install Git
+        Download Git 
+
+Verify Installation
+        git --version
+
+Step 2: Create and Initialize a Git Repository
+
+        cd C:\Users\YourName\Documents\MyWebsite
+
+        Initialize a Git repository in this folder:
+
+        git init
+
+Step 3: Add and Commit Files
+
+        Commit the files with a message:
+
+        git commit -m "Initial commit - Static website"
+Step 4: Track Changes
+
+        git status
+        git log
+Step 5: Ignore Unwanted Files (Optional)
+
+        echo node_modules/ > .gitignore
+        echo *.log >> .gitignore
+
+✅ Git is now tracking your static website!
+You can track changes, revert versions, and collaborate easily.
