@@ -1,0 +1,29 @@
+Shell Script to Monitor Logs for Errors and Send Alerts
+
+Step 1: Create the Script
+
+        nano log_monitor.sh
+
+        LOG_FILE="/var/log/syslog"
+        KEYWORDS="error|failed|critical"
+        EMAIL="akshyram408@gmail.com"
+
+        send_alert() {
+    local message="$1"
+    echo "ALERT: $message"
+    
+    
+    echo "$message" | mail -s "Log Monitor Alert" "$EMAIL
+    tail -Fn0 "$LOG_FILE" | while read line; do
+    if echo "$line" | grep -Ei "$KEYWORDS"; then
+        send_alert "$line"
+
+Step 2: Make the Script Executable
+
+        chmod +x log_monitor.sh
+
+Step 3: Run the Script
+
+        ./log_monitor.sh
+
+
