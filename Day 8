@@ -1,0 +1,63 @@
+Set Up a Virtual Machine in the Cloud Create a freetier AWS, Azure, or GCP account. Launch a virtual 
+machine and SSH into it.
+
+Introduction
+Cloud computing has revolutionized how businesses manage IT resources. In this task, we will focus on 
+deploying a virtual machine (VM) in the cloud. This hands-on activity will provide an understanding of 
+cloud platforms, virtual machine provisioning, and secure SSH access.
+Objectives
+1. Understand the concept of cloud computing and VMs.
+2. Create a free-tier account on a cloud provider (AWS, Azure, or GCP).
+3. Launch a Linux virtual machine.
+4. Connect to the VM securely using SSH.
+Steps
+1. Create a Free-Tier Cloud Account:
+o Sign up for a free-tier account on AWS, Azure, or GCP.
+o Verify your account to access free-tier services.
+2. Launch a Virtual Machine:
+o Access the cloud provider’s dashboard.
+o Create a new Linux VM instance.
+o Configure the instance with basic settings such as region, operating system, and instance 
+type.
+3. Connect to the Virtual Machine:
+o Retrieve the public IP address of your VM.
+o Use the following SSH command to connect:
+ssh <user>@<IP_address>
+Replace <user> with the default username for your chosen cloud provider (e.g., ec2-user for 
+AWS) and <IP_address> with your VM’s public IP.
+Key Learnings
+• Basics of cloud computing.
+• Creating and configuring a virtual machine.
+• Using SSH to access remote servers securely.
+Document 2: Hosting a Static Website on a Cloud VM
+Introduction
+Hosting a static website on a cloud virtual machine is a fundamental step in understanding web server setup. 
+This task demonstrates how to install a web server, configure it, and deploy a static HTML website.
+Objectives
+1. Learn how to install and configure a web server (Apache or Nginx).
+2. Transfer static website files to the server.
+3. Serve the static website over the internet.
+Steps
+1. Connect to the Cloud VM:
+o Use the SSH command to access your cloud VM.
+ssh <user>@<IP_address>
+2. Install Apache or Nginx:
+o Update the package list:
+sudo apt update
+o Install Apache:
+sudo apt install apache2 -y
+OR Install Nginx:
+sudo apt install nginx -y
+3. Transfer HTML Files to the VM:
+o Use SCP (Secure Copy Protocol) to transfer files:
+scp index.html <user>@<IP_address>:/var/www/html/
+4. Configure the Web Server:
+o Ensure the web server is running:
+sudo systemctl start apache2
+OR
+sudo systemctl start nginx
+o Access the website using the VM’s public IP in a browser: http://<IP_address>.
+Key Learnings
+• Basics of web servers (Apache/Nginx).
+• Transferring files using SCP.
+• Hosting a static website on a cloud VM
